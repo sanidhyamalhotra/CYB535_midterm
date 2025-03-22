@@ -1,4 +1,4 @@
-# CYB535_midterm
+# CYB535 Midterm
 code for midterm will be here
 
 # Objective of the midterm
