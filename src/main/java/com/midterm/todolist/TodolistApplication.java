@@ -1,13 +1,56 @@
 package com.midterm.todolist;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.Scanner;
 
-@SpringBootApplication
 public class TodolistApplication {
-
 	public static void main(String[] args) {
-		SpringApplication.run(TodolistApplication.class, args);
-	}
+		Scanner scanner = new Scanner(System.in);
+		ToDoList toDoList = new ToDoList();
 
+		try {
+			while (true) {
+				System.out.println("\n=================================");
+				System.out.println("         TO-DO LIST MENU         ");
+				System.out.println("=================================");
+				System.out.println("1. Add Task");
+				System.out.println("2. Remove Task");
+				System.out.println("3. Complete Task");
+				System.out.println("4. View Tasks");
+				System.out.println("5. Exit");
+				System.out.println("=================================");
+
+				System.out.print("Enter your choice: ");
+				int choice = scanner.nextInt();
+				scanner.nextLine(); // Consume newline
+
+				switch (choice) {
+					case 1 -> {
+						System.out.print("\nEnter task: ");
+						toDoList.addTask(scanner.nextLine());
+						System.out.println("Task added successfully!");
+					}
+					case 2 -> {
+						System.out.print("\nEnter task number to remove: ");
+						toDoList.removeTask(scanner.nextInt());
+						System.out.println("Task removed!");
+					}
+					case 3 -> {
+						System.out.print("\nEnter task number to mark as completed: ");
+						toDoList.completeTask(scanner.nextInt());
+						System.out.println("Task marked as completed!");
+					}
+					case 4 -> {
+						System.out.println("\nYour To-Do List:");
+						toDoList.viewTasks();
+					}
+					case 5 -> {
+						System.out.println("\nExiting... Have a great day!");
+						return;
+					}
+				}
+			}
+		} finally {
+			scanner.close();
+		}
+	}
 }
