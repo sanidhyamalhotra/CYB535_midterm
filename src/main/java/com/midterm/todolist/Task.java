@@ -13,11 +13,11 @@ public class Task {
         this.isCompleted = true;
     }
 
-    public String getDescription() {  // ✅ Getter for description
+    public String getDescription() {
         return description;
     }
 
-    public boolean isCompleted() {  // ✅ Getter for completion status
+    public boolean isCompleted() {
         return isCompleted;
     }
 

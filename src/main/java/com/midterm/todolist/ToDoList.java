@@ -32,7 +32,7 @@ public class ToDoList {
         }
     }
 
-    public List<String> getTasks() {  // ✅ New getter method
+    public List<String> getTasks() {
         List<String> taskList = new ArrayList<>();
         for (Task task : tasks) {
             taskList.add(task.toString());
