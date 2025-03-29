@@ -12,6 +12,10 @@
  	<artifactId>todolist</artifactId>
  	<version>0.0.1-SNAPSHOT</version>
  	<name>todolist</name>
+ 	<properties>
+	    <maven.compiler.source>17</maven.compiler.source>
+	    <maven.compiler.target>11</maven.compiler.target>
+	</properties>
  	<description>Midterm project of CYB535</description>
  	<url/>
  	<licenses>
