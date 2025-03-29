@@ -26,9 +26,6 @@
  		<tag/>
  		<url/>
  	</scm>
- 	<properties>
- 		<java.version>17</java.version>
- 	</properties>
  	<dependencies>
  		<dependency>
  			<groupId>org.springframework.boot</groupId>
@@ -50,16 +47,17 @@
  	<build>
  		<plugins>
  			<plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-compiler-plugin</artifactId>
-        	</plugin>
-        	<plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-surefire-plugin</artifactId>
-	            <configuration>
-	                <argLine>-Djava.home=${env.TEST_JAVA_HOME}</argLine>
-	            </configuration>
-        	</plugin>
+ 				<groupId>org.apache.maven.plugins</groupId>
+ 				<artifactId>maven-compiler-plugin</artifactId>
+ 				<configuration>
+ 					<annotationProcessorPaths>
+ 						<path>
+ 							<groupId>org.projectlombok</groupId>
+ 							<artifactId>lombok</artifactId>
+ 						</path>
+ 					</annotationProcessorPaths>
+ 				</configuration>
+ 			</plugin>
  			<plugin>
  				<groupId>org.springframework.boot</groupId>
  				<artifactId>spring-boot-maven-plugin</artifactId>
