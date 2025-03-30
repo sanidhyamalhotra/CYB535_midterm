@@ -57,6 +57,13 @@
                 </executions>
             </plugin>
 
+			<!-- sonar plugin for code analysis -->
+			<plugin>
+			    <groupId>org.sonarsource.scanner.maven</groupId>
+			    <artifactId>sonar-maven-plugin</artifactId>
+			    <version>3.9.1.2184</version> <!-- Last Java 8 compatible version -->
+			</plugin>
+			
             <!-- For running the application -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
