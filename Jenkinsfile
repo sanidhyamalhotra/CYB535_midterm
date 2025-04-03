@@ -105,6 +105,7 @@ pipeline {
                         passwordVariable: 'DOCKER_PWD'    // Must match what you use below
                     )]) {
                         sh """
+                        	docker login -u ${DOCKER_USER} --password-stdin
                             docker push ${env.DOCKERHUB_REPO}:latest
                             docker logout
                         """
