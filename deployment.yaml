@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: todolist-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: todolist
@@ -26,6 +26,7 @@ spec:
   selector:
     app: todolist
   ports:
-    - port: 80
+    - protocol: TCP
+      port: 80
       targetPort: 8080
   type: NodePort 	

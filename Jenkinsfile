@@ -52,7 +52,7 @@ pipeline {
             }
         }
         
-        stage('Code Quality') {
+        stage('Analyze Code Quality') {
             agent {
                 docker {
                     reuseNode true
@@ -105,7 +105,6 @@ pipeline {
                         passwordVariable: 'DOCKER_PWD'    // Must match what you use below
                     )]) {
                         sh """
-                            echo ${DOCKER_PWD} | docker login -u ${DOCKER_USER} --password-stdin
                             docker push ${env.DOCKERHUB_REPO}:latest
                             docker logout
                         """
