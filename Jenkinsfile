@@ -52,7 +52,7 @@ pipeline {
             }
         }
         
-        stage('Analyze Code Quality') {
+        stage('Analyze Code Quality Java 8') {
             agent {
                 docker {
                     reuseNode true
